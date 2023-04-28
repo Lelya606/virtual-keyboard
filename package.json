@@ -1,0 +1,45 @@
+{
+  "name": "virtual-keyboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "watch": "webpack --mode development --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lelya606/virtual-keyboard.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.21.3",
+    "@babel/preset-env": "^7.20.2",
+    "babel-loader": "^8.3.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "css": "^3.0.0",
+    "css-loader": "^6.7.3",
+    "eslint": "^8.39.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "html-loader": "^3.1.2",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.7.5",
+    "node-sass": "^7.0.3",
+    "sass": "^1.60.0",
+    "sass-loader": "^12.6.0",
+    "style-loader": "^3.3.2",
+    "webpack": "^5.76.3",
+    "webpack-cli": "^4.10.0"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "normalize.css": "^8.0.1"
+  },
+  "bugs": {
+    "url": "https://github.com/Lelya606/virtual-keyboard/issues"
+  },
+  "homepage": "https://github.com/Lelya606/virtual-keyboard#readme"
+}
