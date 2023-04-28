@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
+    "eslint-webpack-plugin": "^4.0.1",
     "normalize.css": "^8.0.1"
   },
   "bugs": {
