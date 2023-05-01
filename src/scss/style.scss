@@ -9,10 +9,17 @@
   }
 
   &-board {
-    max-width: 711px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 5px;
+    flex-direction: column;
+    row-gap: 10px;
+    align-items: center;
+
+    &__content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 711px;
+      gap: 5px;
+    }
   }
 }
