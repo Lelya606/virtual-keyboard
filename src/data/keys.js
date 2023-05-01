@@ -1,4 +1,4 @@
-export const KEYS = [
+const KEYS = [
   {
     code: 'Backquote',
     'key-en': '`',
@@ -91,17 +91,17 @@ export const KEYS = [
     'shiftKey-ru': '+',
   },
   {
-    code: 'Delete',
-    'key-en': 'Del',
+    code: 'Backspace',
+    'key-en': 'Backspace',
     'shiftKey-en': null,
-    'key-ru': 'Del',
+    'key-ru': 'Backspace',
     'shiftKey-ru': null,
   },
   {
     code: 'Tab',
-    'key-en': '&#8633;',
+    'key-en': 'Tab',
     'shiftKey-en': null,
-    'key-ru': '&#8633;',
+    'key-ru': 'Tab',
     'shiftKey-ru': null,
   },
   {
@@ -196,17 +196,10 @@ export const KEYS = [
     'shiftKey-ru': '/',
   },
   {
-    code: 'Backspace',
-    'key-en': '&#9003;',
-    'shiftKey-en': null,
-    'key-ru': '&#9003;',
-    'shiftKey-ru': null,
-  },
-  {
     code: 'CapsLock',
-    'key-en': '&#8682;',
+    'key-en': 'CapsLock',
     'shiftKey-en': null,
-    'key-ru': '&#8682;',
+    'key-ru': 'CapsLock',
     'shiftKey-ru': null,
   },
   {
@@ -288,16 +281,16 @@ export const KEYS = [
   },
   {
     code: 'Enter',
-    'key-en': '&#8617;',
+    'key-en': 'Enter',
     'shiftKey-en': null,
-    'key-ru': '&#8617;',
+    'key-ru': 'Enter',
     'shiftKey-ru': null,
   },
   {
-    code: 'shiftKeyLeft',
-    'key-en': '&#8679;',
+    code: 'ShiftLeft',
+    'key-en': 'Shift',
     'shiftkey-en': null,
-    'key-ru': '&#8679;',
+    'key-ru': 'Shift',
     'shiftKey-ru': null,
   },
   {
@@ -372,30 +365,30 @@ export const KEYS = [
   },
   {
     code: 'ArrowUp',
-    'key-en': '&#9652;',
+    'key-en': 'ArrowUp',
     'shiftKey-en': null,
-    'key-ru': '&#9652;',
+    'key-ru': 'ArrowUp',
     'shiftKey-ru': null,
   },
   {
-    code: ''shiftKey-en'Right',
-    'key-en': '&#8679;',
+    code: 'ShiftRight',
+    'key-en': 'Shift',
     'shiftKey-en': null,
-    'key-ru': '&#8679;',
+    'key-ru': 'Shift',
     'shiftKey-ru': null,
   },
   {
     code: 'ControlLeft',
-    'key-en': 'control',
+    'key-en': 'Control',
     'shiftKey-en': null,
-    'key-ru': 'control',
+    'key-ru': 'Control',
     'shiftKey-ru': null,
   },
   {
     code: 'MetaLeft',
-    'key-en': '&#8862;',
+    'key-en': 'Meta',
     'shiftKey-en': null,
-    'key-ru': '&#8862;',
+    'key-ru': 'Meta',
     'shiftKey-ru': null,
   },
   {
@@ -420,31 +413,33 @@ export const KEYS = [
     'shiftKey-ru': null,
   },
   {
-    code: 'ArrowLeft',
-    'key-en': '&#9666;',
+    code: 'ControlRight',
+    'key-en': 'Control',
     'shiftKey-en': null,
-    'key-ru': '&#9666;',
+    'key-ru': 'Control',
+    'shiftKey-ru': null,
+  },
+  {
+    code: 'ArrowLeft',
+    'key-en': 'ArrowLeft',
+    'shiftKey-en': null,
+    'key-ru': 'ArrowLeft',
     'shiftKey-ru': null,
   },
   {
     code: 'ArrowDown',
-    'key-en': '&#9662;',
+    'key-en': 'ArrowDown',
     'shiftKey-en': null,
-    'key-ru': '&#9662;',
+    'key-ru': 'ArrowDown',
     'shiftKey-ru': null,
   },
   {
     code: 'ArrowRight',
-    'key-en': '&#9656;',
+    'key-en': 'ArrowRight',
     'shiftKey-en': null,
-    'key-ru': '&#9656;',
-    'shiftKey-ru': null,
-  },
-  {
-    code: 'ControlRight',
-    'key-en': 'control',
-    'shiftKey-en': null,
-    'key-ru': 'control',
+    'key-ru': 'ArrowRight',
     'shiftKey-ru': null,
   },
 ];
+
+export default KEYS;
