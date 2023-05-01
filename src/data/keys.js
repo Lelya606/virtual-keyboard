@@ -1,4 +1,4 @@
-export default [
+export const KEYS = [
   {
     code: 'Backquote',
     'key-en': '`',
@@ -294,9 +294,9 @@ export default [
     'shiftKey-ru': null,
   },
   {
-    code: ''shiftKey-en'Left',
-    key-en: '&#8679;',
-    'shift'key-en'': null,
+    code: 'shiftKeyLeft',
+    'key-en': '&#8679;',
+    'shiftkey-en': null,
     'key-ru': '&#8679;',
     'shiftKey-ru': null,
   },
