@@ -1,14 +1,18 @@
-.key-board {
-  max-width: 711px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 5px;
-}
-
 .key {
   padding: 10px;
   border: 1px solid #000000;
   border-radius: 5px;
   min-width: 22px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &-board {
+    max-width: 711px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 5px;
+  }
 }
