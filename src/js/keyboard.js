@@ -5,8 +5,23 @@ export default class Keyboard {
     this.dataKeys = data;
     this.language = 'ru';
     this.indexTwoKey = 12;
-    this.valueTextarea = '';
     this.textarea = null;
+    this.textareaRows = 10;
+  }
+
+  addFocusTextarea() {
+    this.textarea.focus();
+  }
+
+  changePositionCursor(code) {
+    const change = {
+      ArrowLeft: this.textarea.selectionStart - 1,
+      ArrowRight: this.textarea.selectionStart + 1,
+      ArrowDown: this.textarea.value.length,
+      ArrowUp: 0,
+    };
+
+    this.textarea.selectionStart = this.textarea.selectionEnd = change[code];
   }
 
   addActiveClass(code) {
@@ -55,7 +70,7 @@ export default class Keyboard {
   addTextarea() {
     const textarea = document.createElement('textarea');
     textarea.setAttribute('autofocus', true);
-    textarea.rows = 10;
+    textarea.rows = this.textareaRows;
     textarea.classList.add('key-board__textarea');
     this.textarea = textarea;
     return textarea;

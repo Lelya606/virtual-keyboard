@@ -196,6 +196,13 @@ const KEYS = [
     'shiftKey-ru': '/',
   },
   {
+    code: 'Delete',
+    'key-en': 'Delete',
+    'shiftKey-en': null,
+    'key-ru': 'Delete',
+    'shiftKey-ru': null,
+  },
+  {
     code: 'CapsLock',
     'key-en': 'CapsLock',
     'shiftKey-en': null,

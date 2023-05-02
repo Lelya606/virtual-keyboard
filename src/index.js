@@ -6,11 +6,19 @@ const isChangeLanguage = (e) => {
   const isAltKey = e.altKey && !e.code.includes('Alt');
   const isShiftKey = e.shiftKey && !e.code.includes('Shift');
   return isCode && (isAltKey || isShiftKey);
-}
+};
 
 window.addEventListener('load', () => {
   const keyboard = new Keyboard(KEYS);
   keyboard.addKeyBoard();
+
+  const speshKeys = {
+    ArrowLeft: (code) => keyboard.changePositionCursor(code),
+    ArrowDown: (code) => keyboard.changePositionCursor(code),
+    ArrowUp: (code) => keyboard.changePositionCursor(code),
+    ArrowRight: (code) => keyboard.changePositionCursor(code),
+  };
+
   document.addEventListener('keydown', (e) => {
     keyboard.addActiveClass(e.code);
     if (isChangeLanguage(e)) {
@@ -27,6 +35,11 @@ window.addEventListener('load', () => {
     const key = isKey ? e.target : e.target.closest('.key');
     if (!key) return;
     key.classList.add('js-active');
+    const keyCode = key.getAttribute('data-code');
+    const isSpeshKeys = Object.keys(speshKeys).includes(keyCode);
+    if (isSpeshKeys) {
+      return speshKeys[keyCode](keyCode);
+    }
     const value = key.querySelector('.key__text_key').innerText;
     value && keyboard.inputValue(value);
   });
@@ -37,5 +50,6 @@ window.addEventListener('load', () => {
       : e.target.closest('.key');
 
     key && key.classList.remove('js-active');
+    keyboard.addFocusTextarea();
   });
 });
