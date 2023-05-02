@@ -13,8 +13,8 @@ export default class Keyboard {
     keyElement.classList.add('js-active');
   }
 
-  removeActiveClass(key) {
-    const keyElement = document.querySelector(`.js-active`);
+  removeActiveClass() {
+    const keyElement = document.querySelector('.js-active');
     keyElement.classList.remove('js-active');
   }
 

@@ -6,10 +6,8 @@ window.addEventListener('load', () => {
   keyboard.addKeyBoard();
   document.addEventListener('keydown', (e) => {
     keyboard.addActiveClass(e.key);
-    console.log(e);
   });
-  document.addEventListener('keyup', (e) => {
-    keyboard.removeActiveClass(e.key);
-    console.log(e);
+  document.addEventListener('keyup', () => {
+    keyboard.removeActiveClass();
   });
 });
