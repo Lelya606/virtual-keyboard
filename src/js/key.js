@@ -11,10 +11,11 @@ export default class Key {
     });
   }
 
-  addTextElement(content) {
+  addTextElement(content, modifier = false) {
     const text = document.createElement('span');
+    const classModifier = modifier ? 'key__text_shiftKey' : 'key__text_key';
     text.innerText = content;
-    text.classList.add('key__text');
+    text.classList.add('key__text', classModifier);
     return text;
   }
 
@@ -25,7 +26,7 @@ export default class Key {
 
     if (this.isSecondText) {
       const shiftKey = this.key[`shiftKey-${this.language}`];
-      const secondText = this.addTextElement(shiftKey);
+      const secondText = this.addTextElement(shiftKey, true);
       key.append(secondText);
     }
 

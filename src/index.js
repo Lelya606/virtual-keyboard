@@ -21,4 +21,21 @@ window.addEventListener('load', () => {
   document.addEventListener('keyup', (e) => {
     keyboard.removeActiveClass(e.code);
   });
+
+  document.addEventListener('mousedown', (e) => {
+    const isKey = e.target.classList.contains('key');
+    const key = isKey ? e.target : e.target.closest('.key');
+    if (!key) return;
+    key.classList.add('js-active');
+    const value = key.querySelector('.key__text_key').innerText;
+    value && keyboard.inputValue(value);
+  });
+
+  document.addEventListener('mouseup', (e) => {
+    const key = e.target.classList.contains('key')
+      ? e.target
+      : e.target.closest('.key');
+
+    key && key.classList.remove('js-active');
+  });
 });
