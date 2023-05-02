@@ -8,14 +8,16 @@ export default class Keyboard {
     this.valueTextarea = '';
   }
 
-  addActiveClass(key) {
-    const keyElement = document.querySelector(`div[data-key-${this.language}=${key}]`);
-    keyElement.classList.add('js-active');
+  addActiveClass(code) {
+    const keyElement = document.querySelector(`div[data-code=${code}]`);
+    if (keyElement && !keyElement.classList.contains('js-active')) {
+      keyElement.classList.add('js-active');
+    }
   }
 
-  removeActiveClass() {
-    const keyElement = document.querySelector('.js-active');
-    keyElement.classList.remove('js-active');
+  removeActiveClass(code) {
+    const keyElement = document.querySelector(`div[data-code=${code}].js-active`);
+    keyElement && keyElement.classList.remove('js-active');
   }
 
   addKeys() {

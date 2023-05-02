@@ -8,6 +8,10 @@
     cursor: pointer;
   }
 
+  &.js-active {
+    background: blueviolet;
+  }
+
   &-board {
     display: flex;
     flex-direction: column;
