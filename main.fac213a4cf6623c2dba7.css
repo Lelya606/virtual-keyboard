@@ -1,0 +1,28 @@
+/*!**************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/scss/style.scss ***!
+  \**************************************************************************************************************/
+.key {
+  padding: 10px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  min-width: 22px;
+}
+.key:hover {
+  cursor: pointer;
+}
+.key.js-active {
+  background: blueviolet;
+}
+.key-board {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  align-items: center;
+}
+.key-board__content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 740px;
+  gap: 5px;
+}
