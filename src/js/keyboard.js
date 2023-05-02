@@ -3,7 +3,7 @@ import Key from './key';
 export default class Keyboard {
   constructor(data) {
     this.dataKeys = data;
-    this.language = 'en';
+    this.language = 'ru';
     this.indexTwoKey = 12;
     this.valueTextarea = '';
   }
@@ -20,16 +20,28 @@ export default class Keyboard {
     keyElement && keyElement.classList.remove('js-active');
   }
 
+  changeLanguage() {
+    this.language = this.language === 'en' ? 'ru' : 'en';
+    const keys = document.querySelectorAll('.key');
+    console.log(keys);
+    console.log(this.language);
+    keys.forEach((key, index) => {
+      const text = key.querySelector('.key__text');
+      const newText = key.getAttribute(`data-key-${this.language}`);
+      if (!newText || index <= this.indexTwoKey) return;
+      text.innerText = newText;
+    });
+  }
+
   addKeys() {
-    const classThis = this;
     const content = document.createElement('div');
     content.classList.add('key-board__content');
     this.dataKeys.forEach((element, index) => {
-      const key = new Key(element, this.language, index <= this.indexTwoKey).render();
-      key.addEventListener('click', (event) => {
-        console.log(classThis);
-        return console.log(event, 'event');
-      });
+      const key = new Key(
+        element,
+        this.language,
+        index <= this.indexTwoKey
+      ).render();
       content.append(key);
     });
     return content;

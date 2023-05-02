@@ -12,5 +12,6 @@ module.exports = {
    },
    "rules": {
       "linebreak-style": "off",
+      "no-unused-expressions": "off"
    }
 }
