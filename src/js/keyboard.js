@@ -7,10 +7,33 @@ export default class Keyboard {
     this.indexTwoKey = 12;
     this.textarea = null;
     this.textareaRows = 10;
+    this.keys = null;
+    this.capsLk = false;
   }
 
   addFocusTextarea() {
     this.textarea.focus();
+  }
+
+  addNewLine() {
+    this.textarea.value += '\n';
+  }
+
+  addSpace() {
+    this.textarea.value += ' ';
+  }
+
+  changeRegister() {
+    this.capsLk = !this.capsLk;
+    this.keys.forEach((key) => {
+      const dataAtr = this.capsLk ? 'shiftKey' : 'key';
+      const text = key.querySelector('.key__text_key');
+      const textShift = key.querySelector('.key__text_shiftKey');
+      const newText = key.getAttribute(`data-${dataAtr}-${this.language}`);
+      if (textShift) return;
+      if (newText === 'null') return;
+      text.innerText = newText;
+    });
   }
 
   changePositionCursor(code) {
@@ -39,12 +62,14 @@ export default class Keyboard {
 
   changeLanguage() {
     this.language = this.language === 'en' ? 'ru' : 'en';
-    const keys = document.querySelectorAll('.key');
-
-    keys.forEach((key) => {
+    this.keys.forEach((key) => {
       const text = key.querySelector('.key__text_key');
+      const textShift = key.querySelector('.key__text_shiftKey');
       const newText = key.getAttribute(`data-key-${this.language}`);
-      if (!newText) return;
+      if (newText === 'null') return;
+      if (textShift) {
+        textShift.innerText = key.getAttribute(`data-shiftKey-${this.language}`);
+      }
       text.innerText = newText;
     });
   }
@@ -56,13 +81,14 @@ export default class Keyboard {
   addKeys() {
     const content = document.createElement('div');
     content.classList.add('key-board__content');
-    this.dataKeys.forEach((element, index) => {
+    this.keys = this.dataKeys.map((element, index) => {
       const key = new Key(
         element,
         this.language,
         index <= this.indexTwoKey,
       ).render();
       content.append(key);
+      return key;
     });
     return content;
   }

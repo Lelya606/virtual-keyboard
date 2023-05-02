@@ -17,6 +17,10 @@ window.addEventListener('load', () => {
     ArrowDown: (code) => keyboard.changePositionCursor(code),
     ArrowUp: (code) => keyboard.changePositionCursor(code),
     ArrowRight: (code) => keyboard.changePositionCursor(code),
+    Enter: () => keyboard.addNewLine(),
+    Space: () => keyboard.addSpace(),
+    Tab: () => keyboard.addSpace(),
+    CapsLock: () => keyboard.changeRegister(),
   };
 
   document.addEventListener('keydown', (e) => {
@@ -24,6 +28,7 @@ window.addEventListener('load', () => {
     if (isChangeLanguage(e)) {
       return keyboard.changeLanguage();
     }
+    if (e.code === 'CapsLock') return keyboard.changeRegister();
   });
 
   document.addEventListener('keyup', (e) => {
