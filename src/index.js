@@ -21,18 +21,33 @@ window.addEventListener('load', () => {
     Space: () => keyboard.addSpace(),
     Tab: () => keyboard.addSpace(),
     CapsLock: () => keyboard.changeRegister(),
+    Backspace: (code) => keyboard.deleteLetter(code),
+    Delete: (code) => keyboard.deleteLetter(code),
+    ShiftLeft: () => {},
+    ShiftRight: () => {},
+    AltLeft: () => {},
+    AltRight: () => {},
+    MetaLeft: () => {},
+    ControlRight: () => {},
+    ControlLeft: () => {}
   };
 
   document.addEventListener('keydown', (e) => {
+    e.preventDefault();
     keyboard.addActiveClass(e.code);
-    if (isChangeLanguage(e)) {
-      return keyboard.changeLanguage();
-    }
+    if (isChangeLanguage(e)) return keyboard.changeLanguage();
     if (e.code === 'CapsLock') return keyboard.changeRegister();
+    if (e.code.includes('Shift') && !e.altKey) return keyboard.changeRegister();
+    const isSpeshKeys = Object.keys(speshKeys).includes(e.code);
+    if (isSpeshKeys) return speshKeys[e.code](e.code);
+    keyboard.changeValueKeydown(e.code);
   });
 
   document.addEventListener('keyup', (e) => {
     keyboard.removeActiveClass(e.code);
+    if (e.code.includes('Shift') && !e.altKey) {
+      keyboard.changeRegister();
+    }
   });
 
   document.addEventListener('mousedown', (e) => {
@@ -42,9 +57,7 @@ window.addEventListener('load', () => {
     key.classList.add('js-active');
     const keyCode = key.getAttribute('data-code');
     const isSpeshKeys = Object.keys(speshKeys).includes(keyCode);
-    if (isSpeshKeys) {
-      return speshKeys[keyCode](keyCode);
-    }
+    if (isSpeshKeys) return speshKeys[keyCode](keyCode);
     const value = key.querySelector('.key__text_key').innerText;
     value && keyboard.inputValue(value);
   });

@@ -11,6 +11,29 @@ export default class Keyboard {
     this.capsLk = false;
   }
 
+  deleteLetter(code) {
+    const { value, selectionStart, selectionEnd } = this.textarea;
+    console.log(selectionStart, selectionEnd);
+    if (selectionStart !== selectionEnd) {
+      const startString = value.substring(0, selectionStart);
+      const endString = value.substring(selectionEnd);
+      this.textarea.value = startString + endString;
+      return this.textarea.selectionStart = this.textarea.selectionEnd = selectionStart;
+    }
+
+    if (code === 'Backspace') {
+      const startString = value.substring(0, selectionStart - 1);
+      const endString = value.substring(selectionStart, value.length);
+      return this.textarea.value = startString + endString;
+    }
+    if (code === 'Delete') {
+      const startString = value.substring(0, selectionStart);
+      const endString = value.substring(selectionStart + 1, value.length);
+      this.textarea.value = startString + endString;
+      return this.textarea.selectionStart = this.textarea.selectionEnd = selectionStart;
+    }
+  }
+
   addFocusTextarea() {
     this.textarea.focus();
   }
@@ -76,6 +99,14 @@ export default class Keyboard {
 
   inputValue(value) {
     this.textarea.value += value;
+  }
+
+  changeValueKeydown(code) {
+    const key = document.querySelector(`div[data-code=${code}]`);
+    const text = key.querySelector('.key__text_key');
+    const textShift = key.querySelector('.key__text_shiftKey');
+    const value = textShift && this.capsLk ? textShift.innerText : text.innerText;
+    this.inputValue(value);
   }
 
   addKeys() {
