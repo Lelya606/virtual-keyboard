@@ -204,9 +204,9 @@ const KEYS = [
   },
   {
     code: 'CapsLock',
-    'key-en': 'CapsLock',
+    'key-en': 'CapsLk',
     'shiftKey-en': null,
-    'key-ru': 'CapsLock',
+    'key-ru': 'CapsLk',
     'shiftKey-ru': null,
   },
   {
@@ -386,23 +386,23 @@ const KEYS = [
   },
   {
     code: 'ControlLeft',
-    'key-en': 'Control',
+    'key-en': 'Ctrl',
     'shiftKey-en': null,
-    'key-ru': 'Control',
+    'key-ru': 'Ctrl',
     'shiftKey-ru': null,
   },
   {
     code: 'MetaLeft',
-    'key-en': 'Meta',
+    'key-en': 'Wn',
     'shiftKey-en': null,
-    'key-ru': 'Meta',
+    'key-ru': 'Wn',
     'shiftKey-ru': null,
   },
   {
     code: 'AltLeft',
-    'key-en': 'alt',
+    'key-en': 'Alt',
     'shiftKey-en': null,
-    'key-ru': 'alt',
+    'key-ru': 'Alt',
     'shiftKey-ru': null,
   },
   {
@@ -414,23 +414,16 @@ const KEYS = [
   },
   {
     code: 'AltRight',
-    'key-en': 'alt',
+    'key-en': 'Alt',
     'shiftKey-en': null,
-    'key-ru': 'alt',
+    'key-ru': 'Alt',
     'shiftKey-ru': null,
   },
   {
     code: 'ControlRight',
-    'key-en': 'Control',
+    'key-en': 'Ctrl',
     'shiftKey-en': null,
-    'key-ru': 'Control',
-    'shiftKey-ru': null,
-  },
-  {
-    code: 'ArrowLeft',
-    'key-en': 'ArrowLeft',
-    'shiftKey-en': null,
-    'key-ru': 'ArrowLeft',
+    'key-ru': 'Ctrl',
     'shiftKey-ru': null,
   },
   {
@@ -438,6 +431,13 @@ const KEYS = [
     'key-en': 'ArrowDown',
     'shiftKey-en': null,
     'key-ru': 'ArrowDown',
+    'shiftKey-ru': null,
+  },
+  {
+    code: 'ArrowLeft',
+    'key-en': 'ArrowLeft',
+    'shiftKey-en': null,
+    'key-ru': 'ArrowLeft',
     'shiftKey-ru': null,
   },
   {

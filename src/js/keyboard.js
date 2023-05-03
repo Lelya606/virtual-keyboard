@@ -6,7 +6,7 @@ export default class Keyboard {
     this.language = 'ru';
     this.indexTwoKey = 12;
     this.textarea = null;
-    this.textareaRows = 10;
+    this.textareaRows = 8;
     this.keys = null;
     this.capsLk = false;
   }
