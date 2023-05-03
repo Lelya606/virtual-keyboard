@@ -1,0 +1,112 @@
+/*!**************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/scss/style.scss ***!
+  \**************************************************************************************************************/
+body {
+  height: 100vh;
+  margin: 0;
+  background-color: rgba(128, 128, 128, 0.2);
+}
+
+.key {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 10px;
+  width: 22px;
+  min-height: 33px;
+  background: rgba(100, 100, 100, 0.3) radial-gradient(circle at 0 0, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.4));
+  color: #1c1c1c;
+  border: 1.5px solid rgba(28, 28, 28, 0.3607843137);
+  box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.75);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+.key.js-active {
+  box-shadow: inset 0 1px 2px 1px rgba(0, 0, 0, 0.9);
+  background-color: rgba(28, 28, 26, 0.1490196078);
+}
+.key[data-code=Backspace] {
+  width: 80px;
+}
+.key[data-code=Tab] {
+  width: 32px;
+}
+.key[data-code=CapsLock], .key[data-code=Enter] {
+  width: 53px;
+}
+.key[data-code=ShiftLeft], .key[data-code=ShiftRight] {
+  width: 76px;
+}
+.key[data-code=ControlLeft], .key[data-code=ControlRight] {
+  width: 55px;
+}
+.key[data-code=Space] {
+  width: 244px;
+}
+.key[data-code=ArrowLeft], .key[data-code=ArrowRight], .key[data-code=ArrowDown], .key[data-code=ArrowUp] {
+  color: rgba(255, 240, 240, 0);
+}
+.key[data-code=ArrowLeft]:after, .key[data-code=ArrowRight]:after, .key[data-code=ArrowDown]:after, .key[data-code=ArrowUp]:after {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  border-color: #000000;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  position: absolute;
+}
+.key[data-code=ArrowUp]:after {
+  transform: rotate(135deg);
+}
+.key[data-code=ArrowRight]:after {
+  transform: rotate(-135deg);
+}
+.key[data-code=ArrowLeft]:after {
+  transform: rotate(45deg);
+}
+.key[data-code=ArrowDown]:after {
+  transform: rotate(-45deg);
+}
+.key:hover {
+  cursor: pointer;
+}
+.key-board {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.key-board__content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 740px;
+  gap: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(128, 128, 128, 0.1803921569);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+.key-board__textarea {
+  width: 100%;
+  max-width: 740px;
+  padding: 10px;
+  font-size: 20px;
+  resize: none;
+  background-color: rgba(128, 128, 128, 0.2117647059);
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.22);
+  border: 1.5px solid #ffffff;
+  border-radius: 5px;
+  outline: none;
+}
+.key-board__textarea:focus {
+  border: 1.5px solid #ffffff;
+  outline: none;
+}
